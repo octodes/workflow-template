@@ -1,0 +1,16 @@
+# file: .github/workflows/show-directory.yml
+name: show-directory
+# on – defines events that trigger the workflow
+on: push
+jobs:
+    # build – arbitrary job name
+    # there can be more than one
+    build:
+    # operating system for the workflow
+        runs-on: ubuntu-latest
+        steps: # list of steps to be performed
+            # action – performs some task
+            # checkout – clones the repository
+            - uses: actions/checkout@v4
+            # run – arbitrary bash command
+            - run: make say-hello
